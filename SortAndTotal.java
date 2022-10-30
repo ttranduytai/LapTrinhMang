@@ -24,6 +24,8 @@ public class SortAndTotal {
             FileWriter output = new FileWriter("output.txt");
             output.write("Tang dan: " + arrayList.toString().substring(1, arrayList.toString().length()-1) + "\n");
             output.write("Tong: " + tong);
+            System.out.println("Tang dan: " + arrayList.toString().substring(1, arrayList.toString().length()-1));
+            System.out.println("Tong: " + tong);
             output.close();
         } catch (IOException e) {
             System.out.println("Error!");
