@@ -1,9 +1,9 @@
 import java.io.*;
 import java.net.Socket;
 
-public class NumberClient {
+public class Client {
     public final static String SERVER_IP = "192.168.1.10";
-    public final static int SERVER_PORT = 100;
+    public final static int SERVER_PORT = 9;
     public static void main(String[] args) throws IOException, InterruptedException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Socket socket = null;

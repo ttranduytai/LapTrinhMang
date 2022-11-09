@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class NumberServer {
-    public final static int SERVER_PORT = 100;
+public class Server {
+    public final static int SERVER_PORT = 9;
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         try {
@@ -19,10 +19,28 @@ public class NumberServer {
             while (true) {
                 try {
                     Socket socket = serverSocket.accept();
-                    System.out.println("Client accepted: " + socket);
-                    ChatThread thread = new ChatThread(socket);
-                    thread.start();
-                } catch (IOException e) {System.err.println(" Connection Error: " + e);}
+                    System.out.println("User: " + socket);
+                    DataInputStream is = new DataInputStream(socket.getInputStream());
+                    DataOutputStream os = new DataOutputStream(socket.getOutputStream());
+                    while (true){
+                        String input = is.readUTF();
+                        int total = 0;
+                        StringTokenizer st = new StringTokenizer(input," ");
+                        while(st.hasMoreTokens())
+                            {
+                                int n = 0;
+                                n = Integer.parseInt(st.nextToken());
+                                total += n;
+                            }                    
+                        os.writeUTF("" + sort(input) + "\nTotal: " + total);
+                        System.out.println("User input: " + input);
+                        System.out.println("User input sort: " + sort(input));
+                        System.out.println("User input total: " + total);
+                    }
+                    
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
         } catch (IOException e1) {e1.printStackTrace();
         } finally {
