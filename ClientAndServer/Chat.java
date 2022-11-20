@@ -2,8 +2,8 @@ import java.io.*;
 import java.net.Socket;
 
 public class Chat {
-    public final static String SERVER_IP = "10.10.10.59";
-    public final static int SERVER_PORT = 66;
+    public final static String SERVER_IP = "192.168.1.12";
+    public final static int SERVER_PORT = 99;
     public static void main(String[] args) throws IOException, InterruptedException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Socket clientSocket = null;
@@ -21,7 +21,7 @@ public class Chat {
                 BufferedReader inFromUser =
                     new BufferedReader(new InputStreamReader(System.in));
                 //Lấy chuỗi ký tự nhập từ bàn phím
-                sentence_to_server = "tai: " + inFromUser.readLine();
+                sentence_to_server = inFromUser.readLine();
         //    
                 //Tạo socket cho client kết nối đến server qua ID address và port number
             

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class ChatThread extends Thread{
+public class NumberThread extends Thread{
     Socket socket;
 
-    public ChatThread(Socket socket) {
+    public NumberThread(Socket socket) {
         this.socket = socket;
     }
 

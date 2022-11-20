@@ -20,7 +20,7 @@ public class NumberServer {
                 try {
                     Socket socket = serverSocket.accept();
                     System.out.println("Client accepted: " + socket);
-                    ChatThread thread = new ChatThread(socket);
+                    NumberThread thread = new NumberThread(socket);
                     thread.start();
                 } catch (IOException e) {System.err.println(" Connection Error: " + e);}
             }
