@@ -3,7 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class ShapeServer {
-    public final static int SERVER_PORT = 99;////172.20.10.9
+    public final static int SERVER_PORT = 999;////172.20.10.9
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         try {

@@ -3,7 +3,7 @@ import java.net.Socket;
 
 public class Chat {
     public final static String SERVER_IP = "192.168.1.12";
-    public final static int SERVER_PORT = 99;
+    public final static int SERVER_PORT = 999;
     public static void main(String[] args) throws IOException, InterruptedException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Socket clientSocket = null;

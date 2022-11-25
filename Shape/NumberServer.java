@@ -3,7 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class NumberServer {
-    public final static int SERVER_PORT = 100;
+    public final static int SERVER_PORT = 1000;
 
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
@@ -16,7 +16,7 @@ public class NumberServer {
                 try {
                     Socket socket = serverSocket.accept();
                     System.out.println("Client accepted: " + socket);
-                    NumberThread thread = new NumberThread(socket);
+                    ShapeThread2 thread = new ShapeThread2(socket);
                     thread.start();
                 } catch (IOException e) {
                     System.err.println(" Connection Error: " + e);

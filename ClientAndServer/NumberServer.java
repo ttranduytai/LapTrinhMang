@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class NumberServer {
-    public final static int SERVER_PORT = 100;
+    public final static int SERVER_PORT = 1000;
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         try {
